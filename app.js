@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function control (e) {
-    if (e.keyCode === 37) {
+    if (e.keyCode === 37 || e.keyCode === 65) {
       moveLeft()
-    } else if (e.keyCode === 38) {
+    } else if (e.keyCode === 38 || e.keyCode === 87) {
       rotate()
-    } else if (e.keyCode === 39) {
+    } else if (e.keyCode === 39 || e.keyCode === 68) {
       moveRight()
-    } else if (e.keyCode === 40) {
+    } else if (e.keyCode === 40 || e.keyCode === 83) {
       moveDown()
     }
   }
@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // game over
   function gameOver () {
     if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+      alert('You scored ' + score + "!")
       scoreDisplay.innerHTML = 'end'
       clearInterval(timerId)
     }
