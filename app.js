@@ -216,9 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // game over
   function gameOver () {
     if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-      alert('You scored ' + score + "!")
-      scoreDisplay.innerHTML = 'end'
+      scoreDisplay.innerHTML = 'You scored ' + score + '. Game Over!'
       clearInterval(timerId)
+      alert(' You scored ' + score + "!")
     }
   }
 })
